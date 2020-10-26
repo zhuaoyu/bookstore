@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>登录界面</h2>
+<form method="post">
+    <div>用户名：<input type="text" name="name"/></div>
+    <div>密码：<input type="password" name="password"/>  </div>
+    <input type="submit" value="登录"/>
+    @ViewData["show"]
+</form>
+

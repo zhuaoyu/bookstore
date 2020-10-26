@@ -1,0 +1,66 @@
+﻿@model db1.Books
+
+@{
+    ViewBag.Title = "mingxi";
+}
+
+<h2>购买界面</h2>
+
+<div>
+    <h4>Books</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookCoverUrl)
+        </dt>
+
+        <dd>
+            <img src="@Model.BookCoverUrl" style="height:100px;">
+        </dd>
+
+    </dl>
+</div>
+<fieldset>
+    <legend>请输入信息</legend>
+    <form method="post">
+        <input type="hidden" name="name" value="@Model.BookId"/>
+        <div>数量：<input type="text" name="id"/></div>
+        <div>地址：<textarea name="xiangqing"></textarea></div>
+        <input type="submit" value="提交"/>
+
+
+    </form>
+
+</fieldset>
