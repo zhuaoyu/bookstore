@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>视图练习</h2>
+
+@using (Html.BeginForm("submit", "view", FormMethod.Post))
+//类似<form></form>,先action,后controller，提交方式，可以传值给其他action
+//使用input是<input type="text" name="xx" value="默认值" data-id="1" class=""/>
+//在这里只能展示设置type,name,value，其他属性需要放到new{}里定义
+//原本带—的在new{}里面用_ ,class改为@class，每个属性间用逗号隔开
+//转到控制器接收数据，注意是post请求
+//创建单选时注意，展示文字时，用空格或者<span></span>把需要展示的文字分离开
+//listBox和dropdownlist都需要数据源，一个是下拉列表展示，一个是盒子里全部展示选一个
+//RadioButtonList和CheckBoxList是自己自增的，对于多选的，传值需要注意，见控制器
+{
+    
+    <div>
+        用户名：@Html.TextBox("username", "小强", new {data_id="1",data_theme="sdfsf",@class="sddsfd" })
+    </div>
+    <div>
+        介绍：@Html.TextArea("intro")
+    </div>
+    <div>
+        用户密码：@Html.Password("password")
+    </div>
+    <div>
+        性别：@Html.RadioButton("sex","F")<span>男</span>
+              @Html.RadioButton("sex","M") 女
+    </div>
+    <div>
+        性别:@Html.RadioButtonList("sex1",db1.bll.listhelper.getsex())
+    </div>
+    <div>
+        爱好：@Html.CheckBoxList("love",db1.bll.listhelper.getlove())
+    </div>
+    <div>
+        城市：@Html.DropDownList("city",db1.bll.listhelper.getCity())
+    </div>
+    <div>
+        城市：@Html.ListBox("city1",db1.bll.listhelper.getCity())
+    </div>
+    <input type="submit" value="提交"/>
+}

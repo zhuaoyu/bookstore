@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<fieldset>
+    <legend>20元以内的书</legend>
+    @Html.Action("booklist1")<!--添加不返回母版的视图-->
+</fieldset>
+<fieldset>
+    <legend>20元以外的书</legend>
+    @Html.Action("booklist2")<!--添加不返回母版的视图-->
+</fieldset>
+

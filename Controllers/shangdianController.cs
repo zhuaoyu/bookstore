@@ -10,7 +10,7 @@ namespace zhuaoyu.Controllers
     {
         // GET: shangdian
         [OutputCache(CacheProfile ="sqlCache")]//应用服务器缓存过滤器
-        public ActionResult Index()
+        public ActionResult Index( )
         {
             List<db1.Books> list1 = db1.bll.book.getboos();
             return View(list1);
